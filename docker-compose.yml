@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  mongo:
+    image: mongo:5.0
+    container_name: mongodb
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - mongo-data:/data/db
+    privileged: true
+
+volumes:
+  mongo-data:
+
