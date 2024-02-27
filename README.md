@@ -7,6 +7,8 @@ This project features an interactive chat interface that allows users to convers
 
 - LineID：@496ohpkr
 
+## [DEMO VIDEO](https://youtu.be/LUEfN1toPMA) <= Click me
+
 ## Tools Used
 - Golang with Gin framework
 - LINE Messaging API
