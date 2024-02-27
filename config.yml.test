@@ -1,0 +1,16 @@
+mode: dev
+
+Server:
+  RunMode: debug
+  HttpPort: 88
+
+Line:
+  ChannelSecret: xxxxxxxxxdemo
+  Token: xxxxxxxxxdemo
+
+Database:
+  DBType: MongoDB
+  UserName: root
+  PassWord: aaaa1234
+  Host: 127.0.0.1:27017
+  DBName: message

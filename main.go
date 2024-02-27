@@ -18,7 +18,6 @@ func main() {
 	r := gin.Default()
 
 	r.Use(func(c *gin.Context) {
-
 		c.Set("Line", cfg.Line)
 		c.Next()
 	})
