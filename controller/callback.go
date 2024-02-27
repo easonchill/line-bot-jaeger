@@ -14,8 +14,6 @@ import (
 )
 
 func Callback(c *gin.Context) {
-	log.Println("/callback called...")
-
 	lineConfig, err := getLineConfig(c)
 	if err != nil {
 		wrapResponse(c, http.StatusInternalServerError, err.Error(), nil)

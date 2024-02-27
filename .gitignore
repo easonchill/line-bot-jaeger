@@ -7,3 +7,8 @@ config.yml
 
 #MacOS
 .DS_Store
+
+#bin
+line-bot-jaeger
+
+coverage.txt

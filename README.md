@@ -2,6 +2,8 @@
 
 This line-bot is a demonstration project for CINNOX, showcasing a practical implementation of a chatbot integrated with LINE Messenger.
 
+LineID：@496ohpkr
+
 ## Tools Used
 - Golang with Gin framework
 - LINE Messaging API
@@ -25,11 +27,21 @@ Line:
 ```
 
 
-## Setup mongoDB container(use docker-compose)
+## Setup mongoDB container（use docker-compose）
 ```sh
 make up
 ```
 if you want to delete MongoDB container
 ```sh
 make down
+```
+## Unit Test
+```sh
+make test
+```
+## Local build server
+```sh
+make build
+
+./line-bot-jaeger
 ```
