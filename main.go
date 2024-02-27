@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"line-bot-jaeger/config"
+	"line-bot-jaeger/model"
 
 	"github.com/line/line-bot-sdk-go/v8/linebot"
 	"github.com/line/line-bot-sdk-go/v8/linebot/messaging_api"
@@ -14,7 +15,12 @@ import (
 )
 
 func main() {
+	//init config
 	cfg := config.NewConfig()
+
+	//init mongodb
+	mongoClient := model.InitMongoDB(&cfg.MongoDB)
+	model.InitCollection(mongoClient, cfg.MongoDB.Database)
 
 	channelSecret := cfg.Line.ChannelSecret
 	bot, err := messaging_api.NewMessagingApiAPI(
