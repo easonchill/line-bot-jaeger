@@ -1,8 +1,11 @@
-# line-bot-jaeger （杰哥一號）
+# line-bot-jaeger （杰哥）
 
 This line-bot is a demonstration project for CINNOX, showcasing a practical implementation of a chatbot integrated with LINE Messenger.
 
-LineID：@496ohpkr
+- Chat with AI
+This project features an interactive chat interface that allows users to converse with an AI
+
+- LineID：@496ohpkr
 
 ## Tools Used
 - Golang with Gin framework

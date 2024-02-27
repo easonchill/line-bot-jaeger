@@ -10,6 +10,7 @@ type Config struct {
 	MongoDB MongoDB
 	Server  Server
 	Line    Line
+	OpenAI  OpenAI
 }
 
 type MongoDB struct {
@@ -29,6 +30,10 @@ type Line struct {
 	Token         string
 }
 
+type OpenAI struct {
+	Token string
+}
+
 func NewConfig() *Config {
 	viper.SetConfigType("yaml")
 	viper.SetConfigName("config")
@@ -45,5 +50,6 @@ func NewConfig() *Config {
 		Database: viper.GetString("Database.DBName")},
 		Server: Server{Port: viper.GetString("Server.HttpPort")},
 		Line:   Line{ChannelSecret: viper.GetString("Line.ChannelSecret"), Token: viper.GetString("Line.Token")},
+		OpenAI: OpenAI{Token: viper.GetString("OpenAI.Token")},
 	}
 }

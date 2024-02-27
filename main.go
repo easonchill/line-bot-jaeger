@@ -22,6 +22,11 @@ func main() {
 		c.Next()
 	})
 
+	r.Use(func(c *gin.Context) {
+		c.Set("OpenAI", cfg.OpenAI.Token)
+		c.Next()
+	})
+
 	router.SetupRouter(r)
 
 	if err := r.Run(":" + cfg.Server.Port); err != nil {

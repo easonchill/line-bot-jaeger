@@ -2,10 +2,12 @@ package controller
 
 import (
 	"fmt"
+
 	"log"
 	"net/http"
 
 	"line-bot-jaeger/model"
+	"line-bot-jaeger/module/openai"
 
 	"github.com/gin-gonic/gin"
 	"github.com/line/line-bot-sdk-go/v8/linebot"
@@ -15,6 +17,8 @@ import (
 
 func Callback(c *gin.Context) {
 	lineConfig, err := getLineConfig(c)
+	openaiToken := c.MustGet("OpenAI").(string)
+
 	if err != nil {
 		wrapResponse(c, http.StatusInternalServerError, err.Error(), nil)
 		return
@@ -50,12 +54,15 @@ func Callback(c *gin.Context) {
 					wrapResponse(c, http.StatusInternalServerError, err.Error(), nil)
 				}
 
+				aiResp := openai.ChatToAI(openaiToken, message.Text)
+				log.Println(aiResp)
+
 				if _, err = bot.ReplyMessage(
 					&messaging_api.ReplyMessageRequest{
 						ReplyToken: e.ReplyToken,
 						Messages: []messaging_api.MessageInterface{
 							messaging_api.TextMessage{
-								Text: message.Text,
+								Text: aiResp,
 							},
 						},
 					},
