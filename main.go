@@ -1,11 +1,15 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"log"
+	"net/http"
+
 	"line-bot-jaeger/config"
 	"line-bot-jaeger/model"
 	"line-bot-jaeger/router"
-	"log"
+
+	"github.com/gin-gonic/gin"
+	"golang.org/x/crypto/acme/autocert"
 )
 
 func main() {
@@ -29,8 +33,5 @@ func main() {
 
 	router.SetupRouter(r)
 
-	if err := r.Run(":" + cfg.Server.Port); err != nil {
-		log.Println(err)
-	}
-
+	log.Fatal(http.Serve(autocert.NewListener("api.easonchill.dev"), r))
 }

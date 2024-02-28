@@ -5,7 +5,9 @@ This line-bot is a demonstration project for CINNOX, showcasing a practical impl
 - Chat with AI
 This project features an interactive chat interface that allows users to converse with an AI
 
-- LineID：@496ohpkr
+## LineID：@496ohpkr
+
+I am running this bot server on GCP, so you can directly add this bot for testing purposes.
 
 ## [DEMO VIDEO](https://youtu.be/LUEfN1toPMA) <= Click me
 
@@ -53,4 +55,46 @@ make build
 
 ## API Doc
 
-- [Postman API](https://api.postman.com/collections/30084068-078f67cd-281d-4a73-a9b2-e15cddcbd462?access_key=PMAT-01HQQHTK4M07S6WG89AKHRZCY2)
+### [Postman API](https://api.postman.com/collections/30084068-078f67cd-281d-4a73-a9b2-e15cddcbd462?access_key=PMAT-01HQQHTK4M07S6WG89AKHRZCY2)
+
+### Router
+
+HOST：https://api.easonchill.dev
+
+（P.S：The test server might be shut down at any time.）
+
+| Method | URL                           | Describe                                       |
+| --- | --- | ---------------------------------------------- |
+| POST | {{HOST}}/callback     | For line webhook                                   |
+| POST | {{HOST}}/sendMessage         | Send message to user                           |
+| GET | {{HOST}}/message/{{userid}} | Get a Single User's Message                               |
+| GET |  {{HOST}}/message/{{userid}}  | Get All Messages from All Users                               |
+
+### Send massage
+
+**Request**
+
+URL: `{{HOST}}/sendMessage`
+
+Method: `POST`
+
+**Path Variables**
+
+| Parameter    |  Type  | Required | Describe |
+| - | :-: | :-: | :-|
+| userid     	  | string|Required |Userid in line|
+| text     	  | string| Required |Message you want to send to the user|
+
+### Get single user message
+
+**Request**
+
+URL: `{{HOST}}/message/{{userid}}`
+
+Method: `GET`
+
+**Path Variables**
+
+| Parameter    |  Type  | Required | Describe |
+| - | :-: | :-: | :-|
+| userid     	  | string|Required | line user id |
