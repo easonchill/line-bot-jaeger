@@ -9,7 +9,7 @@ This project features an interactive chat interface that allows users to convers
 
 I am running this bot server on GCP, so you can directly add this bot for testing purposes.
 
-## [DEMO VIDEO](https://youtu.be/LUEfN1toPMA) <= Click me
+## [DEMO VIDEO](https://youtu.be/B0Tn8Y_zmDw) <= Click me
 
 ## Tools Used
 - Golang with Gin framework
