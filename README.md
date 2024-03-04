@@ -57,10 +57,6 @@ make build
 
 ### Router
 
-HOST：https://api.easonchill.dev
-
-（P.S：The test server might be shut down at any time.）
-
 | Method | URL                           | Describe                                       |
 | --- | --- | ---------------------------------------------- |
 | POST | {{HOST}}/callback     | For line webhook                                   |
