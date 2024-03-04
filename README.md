@@ -55,8 +55,6 @@ make build
 
 ## API Doc
 
-### [Postman API](https://api.postman.com/collections/30084068-078f67cd-281d-4a73-a9b2-e15cddcbd462?access_key=PMAT-01HQQHTK4M07S6WG89AKHRZCY2)
-
 ### Router
 
 HOST：https://api.easonchill.dev
